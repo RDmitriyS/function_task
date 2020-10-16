@@ -18,12 +18,10 @@ if(result)
 endif()
 
 add_subdirectory(
-  ${CMAKE_CURRENT_BINARY_DIR}/googletest-src
-  ${CMAKE_CURRENT_BINARY_DIR}/googletest-build
-  EXCLUDE_FROM_ALL
+        ${CMAKE_CURRENT_BINARY_DIR}/googletest-src
+        ${CMAKE_CURRENT_BINARY_DIR}/googletest-build
+        EXCLUDE_FROM_ALL
 )
 
-#add_executable(function.h func.cpp)
 add_executable(function_testing function.h tests.cpp)
 target_link_libraries(function_testing gtest_main)
-
