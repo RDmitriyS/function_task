@@ -23,6 +23,7 @@ add_subdirectory(
   EXCLUDE_FROM_ALL
 )
 
+#add_executable(function.h func.cpp)
 add_executable(function_testing function.h tests.cpp)
 target_link_libraries(function_testing gtest_main)
 

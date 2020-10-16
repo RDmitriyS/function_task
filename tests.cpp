@@ -55,7 +55,7 @@ TEST(function_test, ctor_copy)
 struct small_func
 {
     small_func(int value) noexcept
-        : value(value)
+            : value(value)
     {}
 
     int operator()() const
@@ -88,7 +88,7 @@ TEST(function_test, small_func)
 TEST(function_test, small_func_copy_ctor)
 {
     function<int ()> f = small_func(42);
-    function<int ()> g = f;    
+    function<int ()> g = f;
     EXPECT_EQ(42, f());
     EXPECT_EQ(42, g());
 }
@@ -140,15 +140,15 @@ TEST(function_test, small_func_target)
 struct large_func
 {
     large_func(int value) noexcept
-        : that(this)
-        , value(value)
+            : that(this)
+            , value(value)
     {
         ++n_instances;
     }
 
     large_func(large_func const& other) noexcept
-        : that(this)
-        , value(other.value)
+            : that(this)
+            , value(other.value)
     {
         ++n_instances;
     }
@@ -203,7 +203,7 @@ TEST(function_test, large_func)
 TEST(function_test, large_func_copy_ctor)
 {
     function<int ()> f = large_func(42);
-    function<int ()> g = f;    
+    function<int ()> g = f;
     EXPECT_EQ(42, f());
     EXPECT_EQ(42, g());
 }
